@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Random;
 
 /**
@@ -36,7 +38,7 @@ public class Matrix {
                 Random rand = new Random();
                 for (int r = 0; r < ans.length; r++) {
                         for (int c = 0; c < ans[0].length; c++) {
-                                ans[r][c] = rand.nextInt(11);
+                                ans[r][c] = rand.nextInt(101);
                         }
                 }
                 return ans;

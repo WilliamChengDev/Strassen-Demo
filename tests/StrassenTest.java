@@ -1,10 +1,14 @@
+package tests;
+
 import static org.junit.Assert.assertArrayEquals;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import src.Matrix;
+
 public class StrassenTest {
 
-        private static final int MATRIX_SIZE = 512;
+        private static final int MATRIX_SIZE = 1024; // adjust matrix size here
         private static Matrix A;
         private static Matrix B;
 
