@@ -1,4 +1,4 @@
-# Strassen's Algoritm Demonstration
+# Strassen's Algorithm Demonstration
 
 This is a demonstration of Strassen's algorithm, an algorithm used for matrix multiplication. It is named after <br>
 German mathematician Volker Strassen. This demo compares strassen's algorithm's runtime to the normal gradeschool <br>
@@ -7,19 +7,21 @@ method of matrix multiplication.
 ## How the gradeschool algorithm works:
 
 Recall the conventional method of matrix multiplication: <br>
-![gradeschool](/res/gradeschool.png) <br>
+<img src="res/gradeschool.png" height="100"> <br>
 
 The .32 result was obtained by multiplying the respective pair of values in the row and column: <br>
 .7*.3 + .2*.4 + .10\*.3 = .32
 
-## How the Regular Algorithm works:
+## How the Block Matrix Multiplication (Regular) Algorithm works:
 
 The regular algorithm uses something called "block matrix multiplication".
 Assume we are calculating the matrix multiplcation of two n\*n matrices, A and B, where n is a power of 2.<br>
 
 In this case n = 4.
 We can split the two matrices into 4 equal sub-matrices:
-![split matrix](/res/blocks.png) <br>
+
+<img src="res/blocks.png" height="300"> <br>
+
 Where A is split into A11, A12, A21, A22 <br>
 And B is split into B11, B12, B21, B22 <br>
 
@@ -32,7 +34,7 @@ is recursive.
 
 combining all sub-matrices of C will give us the multiplication result.
 
-## Regular Complexity
+## Block Matrix Algorithm Complexity
 
 Since a total of 8 recursive calls are in each level, with the matrices split into 4 at each time, <br>
 we get this complexity via the master theorem: <br>
@@ -43,9 +45,11 @@ we get this complexity via the master theorem: <br>
 Strassen found a way to do the same calculations with only 7 multiplications by calculating 7 matrix multiplications <br>
 which means there is one less recursive call needed.
 
-![strassens](/res/strassens.png) <br>
+<img src="res/strassens.png" height="300"> <br>
 
 by calculating P1-P7 we can add and subtract those terms to get C11-C22, reducing the number of multiplcations needed by 1.
+
+<img src="res/strassenAlgorithm.png" height="400"> <br>
 
 ## Strassen's complexity
 
@@ -74,9 +78,9 @@ not much difference when the matrices are small, however when they are larger...
 |1024x1024|4.09min|2.17min|88.5%faster|
 
 as you can see, the improvement grows as the matrix multiplied grows.
-Looking at the complexity n^3 vs n^2.81:
+Looking at the complexity n^3 (red) vs n^2.81 (black):
 
-![desmos](/res/desmos.png) <br>
+<img src="res/desmos.png" height="300"> <br>
 
 at the time the regular algorithm calculates a solution for a ~2500x2500 matrix, <br>
 strassen's algorithm can calculate the solution for ~4500x4500 matrix. <br>
@@ -99,8 +103,8 @@ That is not to say that strassen's algorithm is perfect. Some one its cons inclu
 
 As a matter of fact, Strassen's algorithm is actually one of the slower matrix multiplication algorithms. <br>
 However it is interesting to study because it is a lot less large/complex then other algorithms, <br>
-and I found the implementation to be very clever.
-![others](/res/others.png) <br>
+and I found the implementation to be very clever. <br>
+<img src="res/others.png" height="400"> <br>
 
 ## Credits
 
